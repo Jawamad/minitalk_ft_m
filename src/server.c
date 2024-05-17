@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 17:48:10 by flmuller          #+#    #+#             */
-/*   Updated: 2024/05/17 10:16:19 by flmuller         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:54:12 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*complt_msg(char current_char, char *msg, siginfo_t *info)
 
 void	print_msg(siginfo_t *info, char **str)
 {
-	ft_putstr("message de ");
+	ft_putstr("Message of ");
 	ft_putnbr_fd(info->si_pid, 1);
 	ft_putstr(" : ");
 	ft_putstr(*str);
@@ -76,6 +76,7 @@ int	main(void)
 	struct sigaction	s_sigaction;
 
 	pid = getpid();
+	ft_putstr("PID : ");
 	ft_putnbr_fd(pid, 1);
 	ft_putchar_fd('\n', 1);
 	ft_memset(&s_sigaction, 0, sizeof(struct sigaction));
